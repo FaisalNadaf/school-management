@@ -1,7 +1,7 @@
-const Homepage = () => {
-  return (
-    <div className=''>Homepage</div>
-  )
-}
+/** @format */
 
-export default Homepage
+const Homepage = () => {
+	return <div className="">Homepage</div>;
+};
+
+export default Homepage;

@@ -7,11 +7,11 @@ const data = [
 	{
 		name: "total",
 		count: 100,
-		fill: "#fff",
+		fill: "#ffffff",
 	},
 	{
 		name: "boys",
-		count: 33,
+		count: 79,
 		fill: "#C3EBFA",
 	},
 	{
@@ -23,9 +23,9 @@ const data = [
 
 const CountChart = () => {
 	return (
-		<div className="h-full w-full">
-			<div className="flex justify-between items-center">
-				<div>Students </div>
+		<div className="h-full w-full bg-white rounded-xl p-4 shadow">
+			<div className="flex justify-between items-center ">
+				<div className="text-xl font-semibold">Students </div>
 				<Image
 					src={"/moreDark.png"}
 					alt=""
@@ -33,7 +33,7 @@ const CountChart = () => {
 					width={20}
 				/>
 			</div>
-			<div className="w-full h-[75%] relative">
+			<div className="w-full h-[65%] relative">
 				<ResponsiveContainer>
 					<RadialBarChart
 						cx="50%"
@@ -51,15 +51,22 @@ const CountChart = () => {
 				</ResponsiveContainer>
 				<Image
 					src={"/maleFemale.png"}
-					height={50}
-					width={50}
+					height={60}
+					width={60}
 					alt=""
-					className="absolute top-1/2 right-1/2 -translate-x-1/2 -translate-y-1/2"
+					className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 "
 				/>
 			</div>
-			<div>
-				<div>
-					<div className="h-5 w-5 bg-" />
+			<div className="flex items-center justify-around ">
+				<div className="">
+					<div className="h-5 w-5 bg-faisal_dev_Sky rounded-full" />
+					<div className="font-semibold text-base">12334</div>
+					<div className="text-gray-500 font-light text-xs">Boys 59%</div>
+				</div>{" "}
+				<div className="">
+					<div className="h-5 w-5 bg-faisal_dev_Yellow rounded-full" />
+					<div className="font-semibold text-base">12334</div>
+					<div className="text-gray-500 font-light text-xs">Girls 41%</div>
 				</div>
 			</div>
 		</div>

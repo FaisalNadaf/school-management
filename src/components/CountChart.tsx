@@ -51,8 +51,8 @@ const CountChart = () => {
 				</ResponsiveContainer>
 				<Image
 					src={"/maleFemale.png"}
-					height={60}
-					width={60}
+					height={50}
+					width={50}
 					alt=""
 					className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 "
 				/>

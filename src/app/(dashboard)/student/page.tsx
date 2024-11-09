@@ -11,6 +11,8 @@ const StudentPage = () => {
 			{/* left  */}
 			<div className="w-full  xl:w-2/3 ">
 				<div className="h-full bg-white p-4 rounded-lg">
+					<h1 className="text-xl font-semibold">Schedule (3C)</h1>
+
 					<BigCalender />
 				</div>
 			</div>

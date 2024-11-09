@@ -133,10 +133,10 @@ const Menu = () => {
 						{i.items.map((item) => {
 							if (item.visible.includes(role)) {
 								return (
-									<Link 
+									<Link
 										href={item.href}
 										key={item.label}
-										className="flex   items-center justify-center text-gray-500 lg:justify-start gap-4 py-1">
+										className="flex hover:bg-faisal_dev_SkyLight hover:shadow rounded-lg  items-center justify-center text-gray-500 lg:justify-start gap-4 py-1">
 										<Image
 											src={item.icon}
 											alt="img"

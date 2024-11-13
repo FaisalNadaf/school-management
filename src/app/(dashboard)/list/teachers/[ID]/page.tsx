@@ -17,7 +17,7 @@ const SingleTeacherPage = () => {
 				{/* TOP */}
 				<div className="flex flex-col lg:flex-row gap-4">
 					{/* USER INFO CARD */}
-					<div className="bg-faisal_dev_Sky py-6 px-4 rounded-md flex-1 flex gap-4">
+					<div className="bg-faisal_dev_SeaGreen py-6 px-4 rounded-md flex-1 flex gap-4">
 						<div className="w-1/3">
 							<Image
 								src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -164,7 +164,7 @@ const SingleTeacherPage = () => {
 					<h1 className="text-xl font-semibold">Shortcuts</h1>
 					<div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
 						<Link
-							className="p-3 rounded-md bg-faisal_dev_SkyLight"
+							className="p-3 rounded-md bg-faisal_dev_SeaGreenLight"
 							href="/">
 							Teacher&apos;s Classes
 						</Link>
@@ -184,7 +184,7 @@ const SingleTeacherPage = () => {
 							Teacher&apos;s Exams
 						</Link>
 						<Link
-							className="p-3 rounded-md bg-faisal_dev_SkyLight"
+							className="p-3 rounded-md bg-faisal_dev_SeaGreenLight"
 							href="/">
 							Teacher&apos;s Assignments
 						</Link>

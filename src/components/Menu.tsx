@@ -136,7 +136,7 @@ const Menu = () => {
 									<Link
 										href={item.href}
 										key={item.label}
-										className="flex hover:bg-faisal_dev_SkyLight hover:shadow rounded-lg  items-center justify-center text-gray-500 lg:justify-start gap-4 py-1">
+										className="flex hover:bg-faisal_dev_SeaGreenLight hover:shadow rounded-lg  items-center justify-center text-gray-500 lg:justify-start gap-4 py-1">
 										<Image
 											src={item.icon}
 											alt="img"

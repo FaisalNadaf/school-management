@@ -17,7 +17,7 @@ const SingleStudentPage = () => {
 				{/* TOP */}
 				<div className="flex flex-col lg:flex-row gap-4">
 					{/* USER INFO CARD */}
-					<div className="bg-faisal_dev_Sky py-6 px-4 rounded-md flex-1 flex gap-4">
+					<div className="bg-faisal_dev_SeaGreen py-6 px-4 rounded-md flex-1 flex gap-4">
 						<div className="w-1/3">
 							<Image
 								src="https://images.pexels.com/photos/5414817/pexels-photo-5414817.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -179,7 +179,7 @@ const SingleStudentPage = () => {
 							Student&apos;s Exams
 						</Link>
 						<Link
-							className="p-3 rounded-md bg-faisal_dev_SkyLight"
+							className="p-3 rounded-md bg-faisal_dev_SeaGreenLight"
 							href="/">
 							Student&apos;s Assignments
 						</Link>

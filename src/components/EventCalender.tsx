@@ -65,7 +65,7 @@ const EventCalender = () => {
 					return (
 						<div
 							key={e.id}
-							className="rounded-lg shadow my-1 p-2 border-t-4 odd:border-faisal_dev_Sky even:border-faisal_dev_Purple">
+							className="rounded-lg shadow my-1 p-2 border-t-4 odd:border-faisal_dev_SeaGreen even:border-faisal_dev_Purple">
 							<div className="flex items-center justify-between">
 								<div className="text-base py-1 font-semibold text-gray-600">
 									{e.title}

@@ -81,7 +81,7 @@ const TeacherListPage = () => {
 			<td>
 				<div className="flex items-center gap-2">
 					<Link href={`/list/teachers/${item.id}`}>
-						<button className="w-7 h-7 flex items-center justify-center rounded-full bg-faisal_dev_Sky">
+						<button className="w-7 h-7 flex items-center justify-center rounded-full bg-faisal_dev_SeaGreen">
 							<Image
 								src="/view.png"
 								alt=""

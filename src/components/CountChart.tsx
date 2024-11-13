@@ -59,7 +59,7 @@ const CountChart = () => {
 			</div>
 			<div className="flex items-center justify-around ">
 				<div className="">
-					<div className="h-5 w-5 bg-faisal_dev_Sky rounded-full" />
+					<div className="h-5 w-5 bg-faisal_dev_SeaGreen rounded-full" />
 					<div className="font-semibold text-base">12334</div>
 					<div className="text-gray-500 font-light text-xs">Boys 59%</div>
 				</div>{" "}

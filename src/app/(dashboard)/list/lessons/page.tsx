@@ -1,5 +1,6 @@
 /** @format */
 
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -43,7 +44,7 @@ const LessonListPage = () => {
 			<td className="hidden md:table-cell">{item.teacher}</td>
 			<td>
 				<div className="flex items-center gap-2">
-					{/* {role === "admin" && (
+					{role === "admin" && (
 						<>
 							<FormModal
 								table="lesson"
@@ -56,7 +57,7 @@ const LessonListPage = () => {
 								id={item.id}
 							/>
 						</>
-					)} */}
+					)}
 				</div>
 			</td>
 		</tr>
@@ -86,12 +87,12 @@ const LessonListPage = () => {
 								height={14}
 							/>
 						</button>
-						{/* {role === "admin" && (
+						{role === "admin" && (
 							<FormModal
 								table="lesson"
 								type="create"
 							/>
-						)} */}
+						)}
 					</div>
 				</div>
 			</div>

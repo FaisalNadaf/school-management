@@ -1,5 +1,6 @@
 /** @format */
 
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -57,12 +58,12 @@ const ParentListPage = () => {
 			<td className="hidden md:table-cell">{item.address}</td>
 			<td>
 				<div className="flex items-center gap-2">
-					{/* {role === "admin" && (
+					{role === "admin" && (
             <>
               <FormModal table="parent" type="update" data={item} />
               <FormModal table="parent" type="delete" id={item.id} />
             </>
-          )} */}
+          )}
 				</div>
 			</td>
 		</tr>
@@ -92,9 +93,12 @@ const ParentListPage = () => {
 								height={14}
 							/>
 						</button>
-						{/* {role === "admin" && (
-              <FormModal table="teacher" type="create"/>
-            )} */}
+						{role === "admin" && (
+							<FormModal
+								table="teacher"
+								type="create"
+							/>
+						)}
 					</div>
 				</div>
 			</div>

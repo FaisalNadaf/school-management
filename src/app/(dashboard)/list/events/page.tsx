@@ -1,4 +1,5 @@
 /** @format */
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -56,7 +57,7 @@ const EventListPage = () => {
 			<td className="hidden md:table-cell">{item.endTime}</td>
 			<td>
 				<div className="flex items-center gap-2">
-					{/* {role === "admin" && (
+					{role === "admin" && (
 						<>
 							<FormModal
 								table="event"
@@ -69,7 +70,7 @@ const EventListPage = () => {
 								id={item.id}
 							/>
 						</>
-					)} */}
+					)}
 				</div>
 			</td>
 		</tr>
@@ -99,12 +100,12 @@ const EventListPage = () => {
 								height={14}
 							/>
 						</button>
-						{/* {role === "admin" && (
+						{role === "admin" && (
 							<FormModal
 								table="event"
 								type="create"
 							/>
-						)} */}
+						)}
 					</div>
 				</div>
 			</div>

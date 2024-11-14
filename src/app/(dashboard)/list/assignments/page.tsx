@@ -1,5 +1,6 @@
 /** @format */
 
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -50,7 +51,7 @@ const AssignmentListPage = () => {
 			<td className="hidden md:table-cell">{item.dueDate}</td>
 			<td>
 				<div className="flex items-center gap-2">
-					{/* {role === "admin" ||
+					{role === "admin" ||
 						(role === "teacher" && (
 							<>
 								<FormModal
@@ -64,7 +65,7 @@ const AssignmentListPage = () => {
 									id={item.id}
 								/>
 							</>
-						))} */}
+						))}
 				</div>
 			</td>
 		</tr>
@@ -96,13 +97,13 @@ const AssignmentListPage = () => {
 								height={14}
 							/>
 						</button>
-						{/* {role === "admin" ||
+						{role === "admin" ||
 							(role === "teacher" && (
 								<FormModal
 									table="assignment"
 									type="create"
 								/>
-							))} */}
+							))}
 					</div>
 				</div>
 			</div>

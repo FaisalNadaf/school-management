@@ -1,5 +1,6 @@
 /** @format */
 
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -43,12 +44,12 @@ const AnnouncementListPage = () => {
 			<td className="hidden md:table-cell">{item.date}</td>
 			<td>
 				<div className="flex items-center gap-2">
-					{/* {role === "admin" && (
+					{role === "admin" && (
             <>
               <FormModal table="announcement" type="update" data={item} />
               <FormModal table="announcement" type="delete" id={item.id} />
             </>
-          )} */}
+          )}
 				</div>
 			</td>
 		</tr>
@@ -80,9 +81,9 @@ const AnnouncementListPage = () => {
 								height={14}
 							/>
 						</button>
-						{/* {role === "admin" && (
+						{role === "admin" && (
               <FormModal table="announcement" type="create" />
-            )} */}
+            )}
 					</div>
 				</div>
 			</div>

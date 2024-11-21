@@ -1,56 +1,62 @@
 /** @format */
 
+import { UserButton } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 
-const Navbar = () => {
+const Navbar = async () => {
+	const user = await currentUser();
 	return (
-		<div className="flex items-center md:justify-between justify-end p-2 ">
-			{/* search */}
-			<div className="hidden md:flex text-xs items-center gap-4 rounded-full ring-[1.5px] ring-gray-400 px-4  ">
+		<div className="flex items-center justify-between p-4">
+			{/* SEARCH BAR */}
+			<div className="hidden md:flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2">
 				<Image
-					src={"/search.png"}
-					height={14}
+					src="/search.png"
+					alt=""
 					width={14}
-					alt="img"
+					height={14}
 				/>
 				<input
-					className="bg-transparent outline-none p-2 w-[200px]"
 					type="text"
 					placeholder="Search..."
+					className="w-[200px] p-2 bg-transparent outline-none"
 				/>
 			</div>
-			{/* user and icons */}
-			<div className="flex items-center justify-end gap-3">
-				<div className=" bg-white h-7 w-7 flex rounded-full items-center justify-center cursor-pointer">
+			{/* ICONS AND USER */}
+			<div className="flex items-center gap-6 justify-end w-full">
+				<div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
 					<Image
-						src={"/message.png"}
-						alt=" "
-						height={20}
+						src="/message.png"
+						alt=""
 						width={20}
+						height={20}
 					/>
-				</div>{" "}
-				<div className=" bg-white h-7 w-7 relative flex rounded-full items-center justify-center cursor-pointer">
+				</div>
+				<div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">
 					<Image
-						src={"/announcement.png"}
-						alt=" "
-						height={20}
+						src="/announcement.png"
+						alt=""
 						width={20}
+						height={20}
 					/>
-					<span className="absolute bg-purple-400 rounded-full h-4 text-white w-4 text-xs -right-2 -top-2 flex items-center justify-center ">
+					<div className="absolute -top-3 -right-3 w-5 h-5 flex items-center justify-center bg-purple-500 text-white rounded-full text-xs">
 						1
-					</span>
+					</div>
 				</div>
 				<div className="flex flex-col">
-					<div className="text-xs font-medium leading-3">jhon doe</div>
-					<div className="text-[10px] text-gray-500 text-right">student</div>
+					<span className="text-xs leading-3 font-medium">John Doe</span>
+					<span className="text-[10px] text-gray-500 text-right">
+						{user?.publicMetadata?.role as string}
+					</span>
 				</div>
-				<Image
-					src={"/avatar.png"}
-					height={36}
-					width={36}
+				{/* <Image
+					src="/avatar.png"
 					alt=""
-					className="rounded-full "
-				/>
+					width={36}
+					height={36}
+					className="rounded-full"
+				/> */}
+				<UserButton />
 			</div>
 		</div>
 	);

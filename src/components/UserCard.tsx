@@ -1,25 +1,32 @@
-/** @format */
-
+import prisma from "@/lib/prisma";
 import Image from "next/image";
 
-const UserCard = ({ type }: { type: string }) => {
-	return (
-		<div className=" shadow rounded-2xl odd:bg-faisal_dev_SeaGreen mx-2 min-w-[130px] flex-1 even:bg-faisal_dev_Purple p-4">
-			<div className="flex justify-between">
-				<span className=" text-[10px] text-green-500 bg-white rounded-full px-2 py-1">
-					2024/20
-				</span>
-				<Image
-					src={"/more.png"}
-					height={20}
-					width={20}
-					alt=""
-				/>
-			</div>
-			<div className="my-4 text-2xl font-semibold">1205</div>
-			<div className="text-sm font-medium text-gray-500">{type}</div>
-		</div>
-	);
+const UserCard = async ({
+  type,
+}: {
+  type: "admin" | "teacher" | "student" | "parent";
+}) => {
+  const modelMap: Record<typeof type, any> = {
+    admin: prisma.admin,
+    teacher: prisma.teacher,
+    student: prisma.student,
+    parent: prisma.parent,
+  };
+
+  const data = await modelMap[type].count();
+
+  return (
+    <div className="rounded-2xl odd:bg-lamaPurple even:bg-lamaYellow p-4 flex-1 min-w-[130px]">
+      <div className="flex justify-between items-center">
+        <span className="text-[10px] bg-white px-2 py-1 rounded-full text-green-600">
+          2024/25
+        </span>
+        <Image src="/more.png" alt="" width={20} height={20} />
+      </div>
+      <h1 className="text-2xl font-semibold my-4">{data}</h1>
+      <h2 className="capitalize text-sm font-medium text-gray-500">{type}s</h2>
+    </div>
+  );
 };
 
 export default UserCard;

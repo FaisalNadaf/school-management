@@ -1,6 +1,6 @@
 /** @format */
 
-// import FormContainer from "@/components/FormContainer";
+import FormContainer from "@/components/FormContainer";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -12,8 +12,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { auth } from "@clerk/nextjs/server";
-import { role } from "@/lib/data";
-import FormContainer from "@/components/FormContainer";
 
 type StudentList = Student & { class: Class };
 
@@ -22,8 +20,8 @@ const StudentListPage = async ({
 }: {
 	searchParams: { [key: string]: string | undefined };
 }) => {
-	// const { sessionClaims } = auth();
-	// const role = (sessionClaims?.metadata as { role?: string })?.role;
+	const { sessionClaims } = auth();
+	const role = (sessionClaims?.metadata as { role?: string })?.role;
 
 	const columns = [
 		{
@@ -50,14 +48,14 @@ const StudentListPage = async ({
 			accessor: "address",
 			className: "hidden lg:table-cell",
 		},
-		// ...(role === "admin"
-		// 	? [
-		// 			{
-		// 				header: "Actions",
-		// 				accessor: "action",
-		// 			},
-		// 	  ]
-		// 	: []),
+		...(role === "admin"
+			? [
+					{
+						header: "Actions",
+						accessor: "action",
+					},
+			  ]
+			: []),
 	];
 
 	const renderRow = (item: StudentList) => (
@@ -93,12 +91,16 @@ const StudentListPage = async ({
 							/>
 						</button>
 					</Link>
-					{/* {role === "admin" && (
-            // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-faisal_dev_Purple">
-            //   <Image src="/delete.png" alt="" width={16} height={16} />
-            // </button>
-            <FormContainer table="student" type="delete" id={item.id} />
-          )} */}
+					{role === "admin" && (
+						// <button className="w-7 h-7 flex items-center justify-center rounded-full bg-faisal_dev_Purple">
+						//   <Image src="/delete.png" alt="" width={16} height={16} />
+						// </button>
+						<FormContainer
+							table="student"
+							type="delete"
+							id={item.id}
+						/>
+					)}
 				</div>
 			</td>
 		</tr>
@@ -172,11 +174,14 @@ const StudentListPage = async ({
 							/>
 						</button>
 						{role === "admin" && (
-            //   <button className="w-8 h-8 flex items-center justify-center rounded-full bg-faisal_dev_Yellow">
-            //     <Image src="/plus.png" alt="" width={14} height={14} />
-            //   </button>
-              <FormContainer table="student" type="create" />
-            )}
+							// <button className="w-8 h-8 flex items-center justify-center rounded-full bg-faisal_dev_Yellow">
+							//   <Image src="/plus.png" alt="" width={14} height={14} />
+							// </button>
+							<FormContainer
+								table="student"
+								type="create"
+							/>
+						)}
 					</div>
 				</div>
 			</div>

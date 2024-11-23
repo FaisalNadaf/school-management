@@ -1,6 +1,6 @@
 /** @format */
 
-// import FormContainer from "@/components/FormContainer";
+import FormContainer from "@/components/FormContainer";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -18,8 +18,8 @@ const TeacherListPage = async ({
 }: {
 	searchParams: { [key: string]: string | undefined };
 }) => {
-	// const { sessionClaims } = auth();
-	// const role = (sessionClaims?.metadata as { role?: string })?.role;
+	const { sessionClaims } = auth();
+	const role = (sessionClaims?.metadata as { role?: string })?.role;
 	const columns = [
 		{
 			header: "Info",
@@ -50,14 +50,14 @@ const TeacherListPage = async ({
 			accessor: "address",
 			className: "hidden lg:table-cell",
 		},
-		// ...(role === "admin"
-		// 	? [
-		// 			{
-		// 				header: "Actions",
-		// 				accessor: "action",
-		// 			},
-		// 	  ]
-		// 	: []),
+		...(role === "admin"
+			? [
+					{
+						header: "Actions",
+						accessor: "action",
+					},
+			  ]
+			: []),
 	];
 
 	const renderRow = (item: TeacherList) => (
@@ -98,12 +98,16 @@ const TeacherListPage = async ({
 							/>
 						</button>
 					</Link>
-					{/* {role === "admin" && (
-            // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-faisal_dev_Purple">
-            //   <Image src="/delete.png" alt="" width={16} height={16} />
-            // </button>
-            <FormContainer table="teacher" type="delete" id={item.id} />
-          )} */}
+					{role === "admin" && (
+						// <button className="w-7 h-7 flex items-center justify-center rounded-full bg-faisal_dev_Purple">
+						//   <Image src="/delete.png" alt="" width={16} height={16} />
+						// </button>
+						<FormContainer
+							table="teacher"
+							type="delete"
+							id={item.id}
+						/>
+					)}
 				</div>
 			</td>
 		</tr>
@@ -174,9 +178,12 @@ const TeacherListPage = async ({
 								height={14}
 							/>
 						</button>
-						{/* {role === "admin" && (
-              <FormContainer table="teacher" type="create" />
-            )} */}
+						{role === "admin" && (
+							<FormContainer
+								table="teacher"
+								type="create"
+							/>
+						)}
 					</div>
 				</div>
 			</div>

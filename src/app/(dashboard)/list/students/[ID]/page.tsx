@@ -1,7 +1,10 @@
 /** @format */
-import Announcement from "@/components/Announcement";
+
+import Announcements from "@/components/Announcements";
+import BigCalendarContainer from "@/components/BigCalendarContainer";
 import FormContainer from "@/components/FormContainer";
 import Performance from "@/components/Performance";
+import StudentAttendanceCard from "@/components/StudentAttendanceCard";
 import prisma from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { Class, Student } from "@prisma/client";
@@ -40,7 +43,7 @@ const SingleStudentPage = async ({
 				{/* TOP */}
 				<div className="flex flex-col lg:flex-row gap-4">
 					{/* USER INFO CARD */}
-					<div className="bg-lamaSky py-6 px-4 rounded-md flex-1 flex gap-4">
+					<div className="bg-faisal_dev_Sky py-6 px-4 rounded-md flex-1 flex gap-4">
 						<div className="w-1/3">
 							<Image
 								src={student.img || "/noAvatar.png"}
@@ -120,7 +123,7 @@ const SingleStudentPage = async ({
 								className="w-6 h-6"
 							/>
 							<Suspense fallback="loading...">
-								{/* <StudentAttendanceCard id={student.id} /> */}
+								<StudentAttendanceCard id={student.id} />
 							</Suspense>
 						</div>
 						{/* CARD */}
@@ -174,10 +177,10 @@ const SingleStudentPage = async ({
 				{/* BOTTOM */}
 				<div className="mt-4 bg-white rounded-md p-4 h-[800px]">
 					<h1>Student&apos;s Schedule</h1>
-					{/* <BigCalendarContainer
+					<BigCalendarContainer
 						type="classId"
 						id={student.class.id}
-					/> */}
+					/>
 				</div>
 			</div>
 			{/* RIGHT */}
@@ -186,12 +189,12 @@ const SingleStudentPage = async ({
 					<h1 className="text-xl font-semibold">Shortcuts</h1>
 					<div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
 						<Link
-							className="p-3 rounded-md bg-lamaSkyLight"
+							className="p-3 rounded-md bg-faisal_dev_SkyLight"
 							href={`/list/lessons?classId=${student.class.id}`}>
 							Student&apos;s Lessons
 						</Link>
 						<Link
-							className="p-3 rounded-md bg-lamaPurpleLight"
+							className="p-3 rounded-md bg-faisal_dev_PurpleLight"
 							href={`/list/teachers?classId=${student.class.id}`}>
 							Student&apos;s Teachers
 						</Link>
@@ -201,19 +204,19 @@ const SingleStudentPage = async ({
 							Student&apos;s Exams
 						</Link>
 						<Link
-							className="p-3 rounded-md bg-lamaSkyLight"
+							className="p-3 rounded-md bg-faisal_dev_SkyLight"
 							href={`/list/assignments?classId=${student.class.id}`}>
 							Student&apos;s Assignments
 						</Link>
 						<Link
-							className="p-3 rounded-md bg-lamaYellowLight"
+							className="p-3 rounded-md bg-faisal_dev_YellowLight"
 							href={`/list/results?studentId=${student.id}`}>
 							Student&apos;s Results
 						</Link>
 					</div>
 				</div>
 				<Performance />
-				<Announcement />
+				<Announcements />
 			</div>
 		</div>
 	);

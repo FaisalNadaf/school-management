@@ -45,7 +45,7 @@ const data = [
   },
   {
     name: "Jul",
-    income: 3490,
+    income: 2490,
     expense: 4300,
   },
   {

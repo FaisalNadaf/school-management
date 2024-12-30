@@ -29,8 +29,8 @@ const AttendanceChartContainer = async () => {
 
   const attendanceMap: { [key: string]: { present: number; absent: number } } =
     {
-      Mon: { present: 0, absent: 0 },
-      Tue: { present: 0, absent: 0 },
+      Mon: { present: 10, absent: 2 },
+      Tue: { present: 20, absent: 7 },
       Wed: { present: 0, absent: 0 },
       Thu: { present: 0, absent: 0 },
       Fri: { present: 0, absent: 0 },

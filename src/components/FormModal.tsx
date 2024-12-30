@@ -12,8 +12,14 @@ import {
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { useFormState } from "react-dom";
+import {
+	Dispatch,
+	SetStateAction,
+	useEffect,
+	useState,
+	useActionState,
+} from "react";
+
 import { toast } from "react-toastify";
 import { FormContainerProps } from "./FormContainer";
 
@@ -124,7 +130,7 @@ const FormModal = ({
 	const [open, setOpen] = useState(false);
 
 	const Form = () => {
-		const [state, formAction] = useFormState(deleteActionMap[table], {
+		const [state, formAction] = useActionState(deleteActionMap[table], {
 			success: false,
 			error: false,
 		});

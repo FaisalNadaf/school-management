@@ -3,8 +3,8 @@
 "use client";
 
 import * as Clerk from "@clerk/elements/common";
-// import * as SignIn from "@clerk/elements/sign-in";
-import { SignIn, useUser } from "@clerk/nextjs";
+import * as SignIn from "@clerk/elements/sign-in";
+import {  useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -22,7 +22,7 @@ export default function SignUpPage() {
 	}, [user, router]);
 	return (
 		<div className="h-screen flex items-center justify-center bg-faisal_dev_SkyLight">
-			{/* <SignIn.Root>
+			<SignIn.Root>
 				<SignIn.Step
 					name="start"
 					className="bg-white p-12 rounded-md shadow-2xl flex flex-col gap-2">
@@ -69,8 +69,9 @@ export default function SignUpPage() {
 						Sign In
 					</SignIn.Action>
 				</SignIn.Step>
-			</SignIn.Root> */}
-			<SignIn />
+			</SignIn.Root>
+			{/* <SignIn />
+			<SignOutButton/> */}
 		</div>
 	);
 }
